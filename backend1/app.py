@@ -132,7 +132,7 @@ def build_recent_sales_summary(orders):
     }
 
 
-def build_product_usage_chart_data(orders, last_n_orders=5):
+def build_product_usage_chart_data(orders, last_n_orders=8):
     recent_orders = get_last_n_orders(orders, last_n_orders)
     counts = {}
 
@@ -166,20 +166,64 @@ def generate_trending_items(recent_orders, limit=5):
     ]
 
 
+def build_forecast_chart_data(forecast_next_hour):
+    return [
+        {"ingredient": ingredient, "predicted": amount}
+        for ingredient, amount in forecast_next_hour.items()
+    ]
+
+
+def build_low_stock_alerts(inventory, forecast_next_hour):
+    alerts = []
+
+    for ingredient, predicted_needed in forecast_next_hour.items():
+        current_stock = inventory.get(ingredient, 0)
+        remaining = current_stock - predicted_needed
+
+        if current_stock <= 0:
+            alerts.append({
+                "ingredient": ingredient,
+                "severity": "critical",
+                "message": f"{ingredient} is already out of stock."
+            })
+        elif remaining < 0:
+            alerts.append({
+                "ingredient": ingredient,
+                "severity": "critical",
+                "message": f"{ingredient} will likely run out in the next hour. Need about {predicted_needed}, only have {current_stock}."
+            })
+        elif remaining <= 3:
+            alerts.append({
+                "ingredient": ingredient,
+                "severity": "warning",
+                "message": f"{ingredient} is getting low. About {remaining:.2f} may remain after the next hour."
+            })
+
+    return alerts
+
+
 def build_predictions(orders):
+    inventory = load_json(INVENTORY_FILE)
+
     recent_orders_5 = get_recent_orders(orders, 5)
     product_usage = build_product_usage_chart_data(orders, last_n_orders=8)
     forecast_next_hour = generate_weighted_forecast(orders)
     trending_items = generate_trending_items(recent_orders_5, limit=5)
     recent_sales_summary = build_recent_sales_summary(orders)
     top_product = product_usage[0]["product"] if product_usage else None
+    forecast_chart_data = build_forecast_chart_data(forecast_next_hour)
+    low_stock_alerts = build_low_stock_alerts(inventory, forecast_next_hour)
 
     return {
+        "debugCheck": "NEW BACKEND IS RUNNING",
         "productUsage": product_usage,
         "topProduct": top_product,
         "trendingItems": trending_items,
         "forecastNextHour": forecast_next_hour,
-        "recentSalesSummary": recent_sales_summary
+        "forecastChartData": forecast_chart_data,
+        "recentSalesSummary": recent_sales_summary,
+        "lowStockAlerts": low_stock_alerts,
+        "currentInventory": inventory
     }
 
 
@@ -240,7 +284,7 @@ def predictions_dashboard():
         }
 
         .container {
-          max-width: 1100px;
+          max-width: 1200px;
           margin: 0 auto;
           padding: 32px;
         }
@@ -334,12 +378,23 @@ def predictions_dashboard():
           word-break: break-word;
         }
 
-        .trend-item {
+        .trend-item,
+        .alert-item {
           padding: 14px 16px;
           border: 1px solid #e5e7eb;
           border-radius: 12px;
           background: #fafafa;
           margin-bottom: 12px;
+        }
+
+        .alert-critical {
+          background: #ffebee;
+          border: 1px solid #ef9a9a;
+        }
+
+        .alert-warning {
+          background: #fff8e1;
+          border: 1px solid #ffe082;
         }
 
         .summary-grid {
@@ -373,7 +428,7 @@ def predictions_dashboard():
     <body>
       <div class="container">
         <div class="header">
-          <h1>Predictions Dashboard</h1>
+          <h1>Predictions Dashboard TEST 999</h1>
           <p>Demand-focused view based on recent restaurant orders.</p>
         </div>
 
@@ -381,7 +436,7 @@ def predictions_dashboard():
           <div class="card-header">
             <div>
               <h2>Hot Products Bar Graph</h2>
-              <p class="muted">X-axis shows menu items. Bar height shows how many times each product appeared in the last 8 orders.</p>
+              <p class="muted">Bar height shows how many times each product appeared in the last 8 orders.</p>
             </div>
             <button class="button" onclick="loadPredictions()">Refresh Data</button>
           </div>
@@ -405,6 +460,28 @@ def predictions_dashboard():
         <div class="card">
           <div class="card-header">
             <div>
+              <h2>Next Hour Ingredient Forecast</h2>
+              <p class="muted">Predicted ingredient demand over the next hour.</p>
+            </div>
+          </div>
+          <div id="forecast-status" class="muted">Loading forecast...</div>
+          <div id="forecast" class="chart-wrap" style="display:none;"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2>Low Stock Alerts</h2>
+              <p class="muted">Ingredients that may run low based on the forecast.</p>
+            </div>
+          </div>
+          <div id="alerts-status" class="muted">Loading alerts...</div>
+          <div id="alerts"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
               <h2>Recent Sales Summary</h2>
               <p class="muted">Short-window order and item counts.</p>
             </div>
@@ -419,14 +496,27 @@ def predictions_dashboard():
           const chartStatus = document.getElementById("chart-status");
           const trending = document.getElementById("trending");
           const trendingStatus = document.getElementById("trending-status");
+          const forecast = document.getElementById("forecast");
+          const forecastStatus = document.getElementById("forecast-status");
+          const alerts = document.getElementById("alerts");
+          const alertsStatus = document.getElementById("alerts-status");
           const summary = document.getElementById("summary");
           const topProduct = document.getElementById("top-product");
 
           chart.style.display = "none";
           chart.innerHTML = "";
           chartStatus.textContent = "Loading chart...";
+
           trending.innerHTML = "";
           trendingStatus.textContent = "Loading trends...";
+
+          forecast.style.display = "none";
+          forecast.innerHTML = "";
+          forecastStatus.textContent = "Loading forecast...";
+
+          alerts.innerHTML = "";
+          alertsStatus.textContent = "Loading alerts...";
+
           summary.innerHTML = "";
           topProduct.innerHTML = "";
 
@@ -437,12 +527,16 @@ def predictions_dashboard():
             if (!res.ok) {
               chartStatus.innerHTML = '<span class="error">Failed to load predictions.</span>';
               trendingStatus.innerHTML = '<span class="error">Failed to load trends.</span>';
+              forecastStatus.innerHTML = '<span class="error">Failed to load forecast.</span>';
+              alertsStatus.innerHTML = '<span class="error">Failed to load alerts.</span>';
               return;
             }
 
             const predictions = json.predictions || {};
             const chartData = predictions.productUsage || [];
             const trendingData = predictions.trendingItems || [];
+            const forecastData = predictions.forecastChartData || [];
+            const lowStockAlerts = predictions.lowStockAlerts || [];
             const salesSummary = predictions.recentSalesSummary || {};
             const hottestProduct = predictions.topProduct || null;
 
@@ -490,6 +584,49 @@ def predictions_dashboard():
               });
             }
 
+            if (forecastData.length === 0) {
+              forecastStatus.textContent = "No forecast data yet.";
+            } else {
+              const maxForecast = Math.max(...forecastData.map(item => item.predicted), 1);
+              forecastStatus.textContent = "";
+              forecast.style.display = "flex";
+
+              forecastData.forEach(item => {
+                const heightPercent = Math.max((item.predicted / maxForecast) * 100, 6);
+
+                const col = document.createElement("div");
+                col.className = "bar-column";
+
+                col.innerHTML = `
+                  <div class="bar-value">${item.predicted}</div>
+                  <div class="bar" style="height:${heightPercent}%; background:#1f4d3d;"></div>
+                  <div class="bar-label">${item.ingredient}</div>
+                `;
+
+                forecast.appendChild(col);
+              });
+            }
+
+            if (lowStockAlerts.length === 0) {
+              alertsStatus.textContent = "";
+              alerts.innerHTML = `
+                <div class="alert-item" style="background:#e8f5e9;border:1px solid #c8e6c9;">
+                  All inventory looks okay for the next hour.
+                </div>
+              `;
+            } else {
+              alertsStatus.textContent = "";
+              lowStockAlerts.forEach(item => {
+                const div = document.createElement("div");
+                div.className = `alert-item ${item.severity === "critical" ? "alert-critical" : "alert-warning"}`;
+                div.innerHTML = `
+                  <strong>${item.severity.toUpperCase()}</strong>
+                  <div style="margin-top:6px;">${item.message}</div>
+                `;
+                alerts.appendChild(div);
+              });
+            }
+
             const summaryItems = [
               ["Orders Last 5 Minutes", salesSummary.ordersLast5Minutes ?? 0],
               ["Orders Last 15 Minutes", salesSummary.ordersLast15Minutes ?? 0],
@@ -512,6 +649,8 @@ def predictions_dashboard():
           } catch (err) {
             chartStatus.innerHTML = '<span class="error">Could not connect to backend predictions data.</span>';
             trendingStatus.innerHTML = '<span class="error">Could not connect to backend predictions data.</span>';
+            forecastStatus.innerHTML = '<span class="error">Could not connect to backend predictions data.</span>';
+            alertsStatus.innerHTML = '<span class="error">Could not connect to backend predictions data.</span>';
           }
         }
 
