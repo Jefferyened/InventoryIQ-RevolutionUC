@@ -1,0 +1,195 @@
+import json
+import os
+
+Inventory = {}
+Menu = {}
+
+INVENTORY_FILE = "Inventory_data.json"
+MENU_FILE = "Menu_data.json"
+
+def save_data():
+    with open(INVENTORY_FILE, "w") as file:
+        json.dump(Inventory, file, indent=4) 
+    with open(MENU_FILE, "w") as file:
+        json.dump(Menu, file, indent=4)
+    print("Data saved")
+
+def load_data():
+    global Inventory, Menu
+    if os.path.exists(INVENTORY_FILE):
+        with open(INVENTORY_FILE, "r") as file:
+            Inventory = json.load(file)
+        print("Inventory loaded")
+    else:
+        print("No saved inventory, starting fresh")
+
+    if os.path.exists(MENU_FILE):
+        with open(MENU_FILE, "r") as file:
+            Menu = json.load(file)
+        print("Menu loaded")
+    else:
+        print("No saved menu, starting fresh")
+
+#Decrement stock of item by amount_used given the item_id
+def decrement_stock(item_id, amount_used):
+    print()
+    #check that its an item in inventory
+    if item_id in Inventory:
+            #Check valid input
+            if amount_used < 0:
+                print("Please enter a positive number")
+                return
+            #Check that we have enough stock
+            if amount_used > Inventory[item_id]['quantity']:
+                print(f"Error not enough {Inventory[item_id]['name']} is stock!")
+                print(f"Current stock level:{Inventory[item_id]['quantity']} {Inventory[item_id]['unit']}")
+                return   
+            else:                             
+                Inventory[item_id]['quantity'] -= amount_used
+                print(f"Subtracted {amount_used} from {Inventory[item_id]['name']}")
+                print(f"New stock level:{Inventory[item_id]['quantity']} {Inventory[item_id]['unit']}")
+            if Inventory[item_id]['quantity'] <= Inventory[item_id]['reorder_threshold']:
+                print(f"ALERT! {Inventory[item_id]['name']} is low order soon")
+                print(f"Current stock level:{Inventory[item_id]['quantity']} {Inventory[item_id]['unit']}")
+                
+    else:
+        print("That item is not in inventory")
+    save_data()
+
+def add_item():
+    print(f"Adding new item")
+    item_id = input("Enter item ID(Example item_03): ").strip()
+    if item_id in Inventory:
+        print(f"Item already in inventory")
+        return
+    name = input("Enter item name: ").strip()
+    category = input(f"Enter item catagory(Meat, Dairy etc.): ").strip()
+    unit = input(f"Enter unit: ").strip()
+    try:
+        quantity = float(input(f"Enter item quantity: "))
+        reorder_threshold = float(input(f"Enter reorder threshold: "))
+    except ValueError:
+        print(f"Invalid input please input numbers only")
+        return
+    Inventory[item_id] = {
+        "name": name,
+        "category": category,
+        "quantity": quantity,
+        "unit": unit,
+        "reorder_threshold": reorder_threshold
+    }
+    print(f"Successfully Added {name} to inventory!")
+    save_data()
+
+def remove_item():
+    item_id = input("Enter item id to remove: ").strip()
+    if not Inventory:
+        print("No items to remove")
+    elif item_id in Inventory:
+        name = Inventory[item_id]['name']
+        del Inventory[item_id]
+        print(f"Removed {name} from system")
+    else:
+        print("Item not found")
+    save_data()
+
+def view_inventory():
+    print(f"\n{'ID':<10} {'NAME':<15} {'STOCK':<10} {'UNIT':<8} {'STATUS':<10}")
+    print("-" * 55)
+    
+    for i_id, info in Inventory.items():
+        # Check if stock is low
+        if info['quantity'] <= info['reorder_threshold']:
+            status = "⚠️  LOW"
+        else:
+            status = "✅ OK"
+        # Print the row with the new status column
+        print(f"{i_id:<10} {info['name']:<15} {info['quantity']:<10} {info['unit']:<8} {status:<10}")
+
+def order_dish():
+    print("Place an order")
+    dish_name = input("Please input dish name: ").strip()
+
+    if dish_name in Menu:
+        recipe = Menu[dish_name]
+        #check if you can make the dish
+        can_make = True
+        for ingredient_id, amount_needed in recipe.items():
+            #check for low stock
+            if ingredient_id not in Inventory or Inventory[ingredient_id]['quantity'] < amount_needed:
+                name = Inventory[ingredient_id]['name'] if ingredient_id in Inventory else ingredient_id
+                print(f"Cannot make {dish_name}. Not enough {name}!")
+                can_make = False
+                break
+        if can_make:
+            for ingredient_id, amount_needed in recipe.items():
+                Inventory[ingredient_id]['quantity'] -= amount_needed
+                
+                if Inventory[ingredient_id]['quantity'] <= Inventory[ingredient_id]['reorder_threshold']:
+                    print(f"LOW STOCK ALERT: Time to order {Inventory[ingredient_id]['name']}")
+            print(f"Order for {dish_name} placed!")
+    save_data()
+def add_menu_item():
+    print("Add new menu item")
+    dish_name = input("Enter dish name: ").strip()
+    if dish_name in Menu:
+        print("Dsih is already in menu")
+        return
+    recipe = {}
+    while True:
+        ingredient_id = input("Enter ingredient ID (or type 'done' to finish): ").strip()
+        if ingredient_id.lower() == 'done':
+            break
+        if ingredient_id not in Inventory:
+            print("That ingredient is not in inventory")
+            continue
+        try:
+            amount = float(input(f"How much {Inventory[ingredient_id]['name']} is needed for one {dish_name}?: "))
+            recipe[ingredient_id] = amount
+        except ValueError:
+            print("Please enter a valid number for the amount")
+    if recipe:
+        Menu[dish_name] = recipe
+        print(f"{dish_name} added to menu with {len(recipe)} ingredients")
+    else:
+        print("Dish cancelled no ingredients added")
+    save_data()
+
+def main_menu():
+    load_data()
+    while True:
+        print("Inventory management system")
+        print("1. View inventory")
+        print("2. Add item")
+        print("3. Log usage")
+        print("4. Remove item")
+        print("5. Add menu item")
+        print("6. Order a dish")
+        print("7. Exit")
+
+        choice = input("Select an option (1-7): ")
+        if choice == "1":
+            if not Inventory:
+                print("Inventory empty")
+            else:
+                view_inventory()
+        elif choice == "2":
+            add_item()
+        elif choice == "3":
+            id_to_edit = input("Enter item id to edit: ")
+            amount = float(input("Amount used: "))
+            decrement_stock(id_to_edit, amount)
+        elif choice == "4":
+            remove_item()
+        elif choice == "5":
+            add_menu_item()
+        elif choice == "6":
+            order_dish()
+        elif choice == "7":
+            print("Exiting system")
+            break
+        else:
+            print("Invalid choice, please try again")
+
+if __name__ == "__main__":
+    main_menu()
