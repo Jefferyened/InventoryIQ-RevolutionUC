@@ -1,0 +1,1192 @@
+[
+  {
+    "timestamp": "2026-03-28T17:24:59.517163",
+    "items": [
+      {
+        "cartId": 1774733095525.1282,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:25:02.348357",
+    "items": [
+      {
+        "cartId": 1774733096655.5627,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      },
+      {
+        "cartId": 1774733101371.7388,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 10.24,
+        "modifiers": [
+          {
+            "label": "Extra Pickles",
+            "type": "add",
+            "ingredient": "pickles",
+            "quantity": 1,
+            "priceChange": 0.25
+          },
+          {
+            "label": "No Sauce",
+            "type": "remove",
+            "ingredient": "sauce",
+            "priceChange": 0
+          },
+          {
+            "label": "Add Cheese",
+            "type": "add",
+            "ingredient": "cheese",
+            "quantity": 1,
+            "priceChange": 1
+          }
+        ],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:31:57.032876",
+    "items": [
+      {
+        "cartId": 1774733513699.0205,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:31:57.166321",
+    "items": [
+      {
+        "cartId": 1774733513699.0205,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:32:22.323125",
+    "items": [
+      {
+        "cartId": 1774733538868.8125,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:32:42.864486",
+    "items": [
+      {
+        "cartId": 1774733559591.2773,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:33:34.277484",
+    "items": [
+      {
+        "cartId": 1774733607127.1873,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 11.49,
+        "modifiers": [
+          {
+            "label": "Vegan Patty",
+            "type": "swap",
+            "ingredient": "patty",
+            "replacement": "vegan patty",
+            "priceChange": 1.5
+          }
+        ],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:34:03.288902",
+    "items": [
+      {
+        "cartId": 1774733637154.2656,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:36:23.650113",
+    "items": [
+      {
+        "cartId": 1774733779772.0732,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:40:16.977164",
+    "items": [
+      {
+        "cartId": 1774734013002.3513,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:40:17.073624",
+    "items": [
+      {
+        "cartId": 1774734013002.3513,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T17:40:17.131145",
+    "items": [
+      {
+        "cartId": 1774734013002.3513,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T18:38:20.208727",
+    "items": [
+      {
+        "cartId": 1774737497203.6272,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:00:17.708180",
+    "items": [
+      {
+        "cartId": 1774738808948.2842,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:00:17.784902",
+    "items": [
+      {
+        "cartId": 1774738808948.2842,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:00:17.845329",
+    "items": [
+      {
+        "cartId": 1774738808948.2842,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:00:17.935407",
+    "items": [
+      {
+        "cartId": 1774738808948.2842,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:00:17.989232",
+    "items": [
+      {
+        "cartId": 1774738808948.2842,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:01:53.800259",
+    "items": [
+      {
+        "cartId": 1774738907161.6704,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:01:53.899494",
+    "items": [
+      {
+        "cartId": 1774738907161.6704,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:05:42.176821",
+    "items": [
+      {
+        "cartId": 1774739134033.8982,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T19:06:29.840038",
+    "items": [
+      {
+        "cartId": 1774739185912.5244,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      },
+      {
+        "cartId": 1774739186943.3171,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      },
+      {
+        "cartId": 1774739187092.1738,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T20:37:19.951110",
+    "items": [
+      {
+        "cartId": 1774744638814.652,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T20:44:52.361453",
+    "items": [
+      {
+        "cartId": 1774745090776.022,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T21:02:19.380352",
+    "items": [
+      {
+        "cartId": 1774746130378.4775,
+        "id": 6,
+        "name": "Sprite",
+        "image": "https://images.unsplash.com/photo-1624517452488-04869289c4ca?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "sprite": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T21:13:51.934752",
+    "items": [
+      {
+        "cartId": 1774746828954.1013,
+        "id": 4,
+        "name": "Coca-Cola",
+        "image": "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "coke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T21:14:36.580895",
+    "items": [
+      {
+        "cartId": 1774746875636.817,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T21:30:36.494182",
+    "items": [
+      {
+        "cartId": 1774747834859.526,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T21:39:59.152932",
+    "items": [
+      {
+        "cartId": 1774748397778.208,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T21:40:44.254626",
+    "items": [
+      {
+        "cartId": 1774748439145.21,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774748442675.06,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:03:50.413223",
+    "items": [
+      {
+        "cartId": 1774749829362.1,
+        "id": 4,
+        "name": "Coca-Cola",
+        "image": "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "coke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:20:45.979646",
+    "items": [
+      {
+        "cartId": 1774750844503.8362,
+        "id": 4,
+        "name": "Coca-Cola",
+        "image": "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "coke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:24:15.690435",
+    "items": [
+      {
+        "cartId": 1774751054326.2446,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:27:52.296387",
+    "items": [
+      {
+        "cartId": 1774751268202.5413,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774751269974.5542,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774751271381.411,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:40:13.596736",
+    "items": [
+      {
+        "cartId": 1774752011019.8972,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:41:03.503866",
+    "items": [
+      {
+        "cartId": 1774752043546.837,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774752051276.1265,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774752053841.9287,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774752056631.0615,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774752058063.2185,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774752059561.2874,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774752061170.4263,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      },
+      {
+        "cartId": 1774752062608.9368,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:58:57.464434",
+    "items": [
+      {
+        "cartId": 1774753136353.7664,
+        "id": 3,
+        "name": "Fries",
+        "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 3.99,
+        "finalPrice": 3.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "fries": 1,
+          "salt": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:59:01.514832",
+    "items": [
+      {
+        "cartId": 1774753140715.6445,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:59:05.208937",
+    "items": [
+      {
+        "cartId": 1774753144406.591,
+        "id": 4,
+        "name": "Coca-Cola",
+        "image": "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "coke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:59:23.443804",
+    "items": [
+      {
+        "cartId": 1774753159959.9724,
+        "id": 3,
+        "name": "Fries",
+        "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 3.99,
+        "finalPrice": 3.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "fries": 1,
+          "salt": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:59:30.527728",
+    "items": [
+      {
+        "cartId": 1774753167978.5498,
+        "id": 6,
+        "name": "Sprite",
+        "image": "https://images.unsplash.com/photo-1624517452488-04869289c4ca?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "sprite": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T22:59:37.172555",
+    "items": [
+      {
+        "cartId": 1774753175935.8179,
+        "id": 5,
+        "name": "Diet Coke",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 2.49,
+        "finalPrice": 2.49,
+        "modifiers": [],
+        "baseIngredients": {
+          "dietCoke": 1,
+          "ice": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T23:09:47.017550",
+    "items": [
+      {
+        "cartId": 1774753786202.3853,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T23:09:56.705241",
+    "items": [
+      {
+        "cartId": 1774753792130.0925,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      },
+      {
+        "cartId": 1774753793556.9268,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      },
+      {
+        "cartId": 1774753794859.2625,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      },
+      {
+        "cartId": 1774753796184.5107,
+        "id": 2,
+        "name": "Chicken Sandwich",
+        "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 8.99,
+        "finalPrice": 8.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "chicken": 1,
+          "lettuce": 1,
+          "pickles": 1,
+          "sauce": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T23:10:00.647952",
+    "items": [
+      {
+        "cartId": 1774753799494.8164,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-28T23:10:04.990118",
+    "items": [
+      {
+        "cartId": 1774753803620.9182,
+        "id": 1,
+        "name": "Classic Burger",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+        "basePrice": 9.99,
+        "finalPrice": 9.99,
+        "modifiers": [],
+        "baseIngredients": {
+          "bun": 1,
+          "patty": 1,
+          "cheese": 1,
+          "lettuce": 1,
+          "tomato": 1,
+          "onion": 1
+        }
+      }
+    ]
+  }
+]
